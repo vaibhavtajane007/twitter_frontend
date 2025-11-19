@@ -1064,16 +1064,12 @@
 
         // This endpoint matches your FastAPI path: @app.post("/predict")
         const apiUrl = 'https://web-production-3d10c.up.railway.app/predict';
-        const match = tweetText.match(/#\w+/);
-        const hashtag = match ? match[0].substring(1) : null;
-        
 
         async function callPredictionApi(tweetText, maxRetries = 3) {
             // Payload structured for the FastAPI TweetInput model: {"tweet": "..."}
             const payload = {
-                trend_name: hashtag
+                trend_name: tweetText
             };
-            const detectedHashtag = result.hashtag || result.trend_name || result.top_hashtag || 'unknown';
 
             for (let attempt = 0; attempt < maxRetries; attempt++) {
                 try {
