@@ -1063,7 +1063,7 @@
         // --- FastAPI Trend Prediction Endpoint Configuration ---
 
         // This endpoint matches your FastAPI path: @app.post("/predict")
-        const apiUrl = 'web-production-3d10c.up.railway.app/predict'; 
+        const apiUrl = 'https://web-production-3d10c.up.railway.app/predict';
 
         async function callPredictionApi(tweetText, maxRetries = 3) {
             // Payload structured for the FastAPI TweetInput model: {"tweet": "..."}
