@@ -963,7 +963,11 @@
                 // Save full prediction for reuse
                 lastPrediction = result;
 
+                const hashtag = result.hashtag || result.trend_name || (tweetText.match(/#([\w\d_]+)/)?.[1] || 'undefined');
                 const probability = (result.probability * 100).toFixed(4);
+
+                `Hashtag analyzed: <strong>#${hashtag}</strong>`
+
                 const willTrend = result.will_trend_tomorrow === 1;
                 const trendColor = willTrend ? 'var(--color-trend-high)' : 'var(--color-trend-low)';
 
