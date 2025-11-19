@@ -1068,7 +1068,7 @@
         async function callPredictionApi(tweetText, maxRetries = 3) {
             // Payload structured for the FastAPI TweetInput model: {"tweet": "..."}
             const payload = {
-                tweet: tweetText // Changed field name to 'tweet'
+                trend_name: tweetText // Changed field name to 'tweet'
             };
 
             for (let attempt = 0; attempt < maxRetries; attempt++) {
